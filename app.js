@@ -146,13 +146,45 @@
 
 
 
-const p3 =  fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5731338&lng=73.8789445&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-p3.then((data1)=>{
-  console.log("Success")
-})
-p3.catch(()=>{
-  console.log("Failed")
-})
+// const p3 =  fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5731338&lng=73.8789445&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+// p3.then((data1)=>{
+//   console.log("Success")
+// })
+// p3.catch(()=>{
+//   console.log("Failed")
+// })
+
+
+
+
+const myAwaitFunction = async () => {
+  try {
+    const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5731338&lng=73.8789445&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    console.log("Success after await");
+  } catch {
+    console.log("Failure in await")
+  }
+}
+
+myAwaitFunction();
+
+
+// Array operations
+let arr1 = [2, 4, 5, 6];
+let arr2 = [1, 3 , 5, 6];
+
+//arr1.push(arr2);
+let arr3 = arr1.concat(arr2);
+
+let arr4 = [...arr1, ...arr2];
+// [2,4,5,6,1,3,5,6]
+let arr5 = new Set(arr4);
+
+console.log(arr5);
+console.log([...arr5]);
+
+
+
 
 
 
